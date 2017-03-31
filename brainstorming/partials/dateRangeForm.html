@@ -1,0 +1,10 @@
+﻿<div>
+<div class="form-group">
+    <div class="form-inline">
+        <md-datepicker ng-model="initialDate"  md-placeholder="Fecha inicial"></md-datepicker>
+        <md-datepicker ng-model="endDate"  md-placeholder="Fecha final"></md-datepicker>
+        <button type="button" ng-click="getExpByDateRange();" class="btn btn-info btn-sm postbutton">Obtener gastos</button>
+        <md-progress-circular class="progressCircular" md-mode="indeterminate" md-diameter="20px" ng-show="isPosting"></md-progress-circular>
+    </div>
+</div>
+ </div>

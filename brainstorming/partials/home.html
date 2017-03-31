@@ -1,0 +1,130 @@
+<md-content id="mainContent" ng-cloak>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-bar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brainstorming</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navigation-bar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a id="profile_picture" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="{{picture}}"
+                                 class="profile-image img-circle"
+                                 height="32" width="32">
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#" ng-click="signOut();">Sign-out</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-init="loadMonths()" id="months">
+        <div id="divMonths">
+            <label>Your expenses</label>
+            <a ng-repeat="m in months track by $index" href="#" ng-click="getExByMont(m.searchDate, m.firstDay, m.lastDay)">{{m.month}}</a>
+            <a href="#" ng-click="dateRange()">Rango de fechas</a>
+            <a href="#" ng-click="getTodayExpenses()">Gastos de hoy</a>
+        </div>
+    </div>
+    <div id="timeline" ng-init="init()">
+        <div ng-show="isRangeDate">
+            <div class="form-group">
+                <div class="form-inline">
+                    <md-datepicker ng-model="initialDate" md-placeholder="Fecha inicial"></md-datepicker>
+                    <md-datepicker ng-model="endDate" md-placeholder="Fecha final"></md-datepicker>
+                    <button type="button" ng-click="getExpByDateRange();" class="btn btn-info btn-sm postbutton">Obtener gastos</button>
+                    <md-progress-circular class="progressCircular" md-mode="indeterminate" md-diameter="20px" ng-show="isPosting"></md-progress-circular>
+                </div>
+            </div>
+        </div>
+        <div ng-show="isNormalDate" class="form-group">
+            <div class="desquandiv">
+                <input type="text" class="form-control description" ng-model="description" placeholder="Descripci&oacute;n" />
+                <div class="hrvertical" style=""></div>
+                <input type="text" class="form-control quantity" ng-model="quantity" placeholder="Cantidad" />
+            </div>
+            <hr />
+            <div class="form-inline">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle categorybutton" data-toggle="dropdown" data-placement="top" title="Selecciona una categoria">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li ng-repeat="c in categories track by $index"><a ng-click="dropboxitemselected(c)" href="#">{{c}}</a></li>
+                    </ul>
+                </div>
+                {{selectedItem}}
+                <md-datepicker ng-model="expDate" md-min-date="minDate" md-max-date="maxDate" md-placeholder="Fecha"></md-datepicker>                
+                <button type="button" ng-click="createIdea();" class="btn btn-info btn-sm postbutton">Agregar</button>
+                <md-progress-circular class="progressCircular" md-mode="indeterminate" md-diameter="20px" ng-show="isPosting"></md-progress-circular>
+            </div>
+        </div>
+        <div class="divProgressCircular" ng-show="isLoading">
+            <md-progress-circular class="loadProgress"  md-mode="indeterminate" md-diameter="20px" ></md-progress-circular>
+        </div>
+        <h2 align="center" ng-show="noExpenses">No hay nada que mostrar :0</h2>
+        <div ng-repeat="item in items | orderBy: '-created'  track by $index" ng-include="'partials/post.html'"></div>
+    </div>
+    <div id="totalExps">
+        <div id="total">
+            <label id="lblmonth">{{month}}</label>
+            <table ng-show="isTableReady" class="table">
+                <tbody>
+                    <tr ng-repeat="item in catTotals track by $index">
+                        <td>
+                            <img class="img" ng-src="{{item.categoryUrl}}" alt="{{item.category}}" height="32" width="32" />
+                            <label>{{item.category}}</label>
+                        </td>
+                        <td class="tdAlignRigth">{{item.total | number:2}}</td>
+                    </tr>
+                    <tr>
+                        <td><label>Total</label></td>
+                        <td class="tdAlignRigth"><label>{{'Q. ' + (exps_sum | number:2)}}</label></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div google-chart chart="myChartObject" id="piechart" ng-show="isChartReady"></div>
+    </div>
+    <md-content id="toast-container">
+    </md-content>
+    <div style="visibility: hidden">
+        <div class="md-dialog-container" id="myDialog">
+            <md-dialog layout-padding>
+                <h2>Pre-Rendered Dialog</h2>
+                <p>
+                    This is a pre-rendered dialog, which means that <code>$mdDialog</code> doesn't compile its
+                    template on each opening.
+                    <br /><br />
+                    The Dialog Element is a static element in the DOM, which is just visually hidden.<br />
+                    Once the dialog opens, we just fetch the element from the DOM into our dialog and upon close
+                    we restore the element back into its old DOM position.
+                </p>
+            </md-dialog>
+        </div>
+    </div>
+</md-content>
+      
+
+<script>
+$(document).ready(function(){
+    $('.categorybutton').tooltip({
+        container: 'body',
+        trigger: 'hover'
+    });
+});
+</script>

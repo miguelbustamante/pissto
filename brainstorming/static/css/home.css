@@ -1,0 +1,369 @@
+#timeline {
+    width: 40%;
+    float: left;
+}
+#months {
+    width: 25%;
+    float: left;
+}
+
+ body {
+  height:auto;
+  background: transparent;
+}
+
+ #mainContent{
+    background-color: #E5E5E5 !important;
+    overflow: hidden !important;
+    min-height: 100% !important;
+}
+
+ md-toast-animating{ overflow:hidden!important }
+
+#toast-container {
+    position:fixed;
+    top:85%; 
+    width:300px;
+    height: 80px;
+    background-color: #E5E5E5 !important;
+    overflow: hidden !important;
+}
+
+
+#months > #divMonths {
+    margin-top: 55px;
+    width: 300px;
+    margin-right: 15px;
+    background: #ffffff;
+    padding-left: 15px;
+    padding-top: 15px;
+    height: 300px auto;
+    float: right;
+    padding-right: 15px;
+    border-radius: 5px;
+    padding-bottom: 15px;
+}
+#months > #divMonths > label {
+    display: block;
+}
+#months > #divMonths > a {
+    display: block;
+    cursor: pointer;
+}
+#totalExps {
+    width: 35%;
+    float: left;
+}
+#totalExps > #total {
+     margin-top: 55px;
+     font-family: Tahoma, Verdana, Segoe, sans-serif;
+     background: #ffffff;
+     margin-left: 15px;
+     width: 400px;
+     border-radius: 5px;
+     height: auto;
+}
+
+#totalExps > #piechart {
+    width: 400px;
+    height: auto;
+    margin-left: 15px;
+    border-radius: 5px;
+}
+
+.tdAlignRigth {
+    text-align: right;
+}
+
+.table > tbody > tr > td {
+    padding: 5px 15px 5px 10px !important;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.table > tbody > tr > td > label {
+   margin-left: 5px;
+   margin-top: 5px;
+}
+
+#totalExps > #total > #lblmonth {
+      margin-top: 25px;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: large;
+      color: #A9A9A9;
+      font-weight: normal;
+}
+
+ #picture {
+        position: absolute;
+        top: 55px;
+        left: 325px;
+        border-radius: 5px;
+    }
+    
+hr{
+    margin: 0px;
+}
+
+.postbutton{
+    float:right !important;
+    margin-top: 5px;
+}
+
+.progressCircular{
+    float: right;
+    margin-right: 6px;
+    margin-top: 8px;
+}
+
+.divProgressCircular {
+    width: 100%;
+}
+
+.loadProgress{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.divButton{
+        background-color: #f1f1f1;
+        margin-left: -11px;
+        margin-right: -11px;
+        clear: both;
+        overflow: hidden;
+        border-top: 1px solid #d3d3d3;
+        border-bottom: 1px solid #d3d3d3;
+}
+
+.divButton > button{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 11px;
+    float: right; 
+}
+
+#timeline {
+    display: inline-block;
+}
+
+/*.form-inline{
+        overflow: hidden;
+        margin-left: -11px;
+        padding-left: 11px;     
+        margin-right: -11px;
+        padding-right: 11px;     
+}*/
+
+    .form-group{
+        margin-top: 55px;
+        /*margin-right: 30%;*/
+        margin-bottom: 15px;
+        /*margin-left: 30%;*/
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        background: #ffffff;
+        width: auto;
+        padding-right: 11px;
+        padding-left: 11px;
+        height: auto;
+        border-radius: 5px;
+        padding-top: 20px;
+    }
+
+.categorybutton {
+    margin-left: 1px;
+    padding: 10px 7px 10px 7px;
+    border: none;
+    background: none;
+}
+    .categorybutton:hover {
+         background-color: #f6f6f6 !important;
+    }
+    .categorybutton:focus {
+          background-color: #f6f6f6 !important;
+    }
+        
+
+.hrvertical {
+    border-left:1px solid #D3D3D3; 
+    height:25px; 
+    display:inline-block; 
+    margin-top: 5px;
+}
+
+.desquandiv {
+    height: 35px;
+    width: 525px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.desquandiv > input {
+        border: 0;
+        margin-bottom: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+}
+.desquandiv > input:focus{
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
+ .description {
+     height:100%;
+     width: 67% !important;
+     display: inline-block;
+     vertical-align: top;
+}
+
+.quantity {
+    width: 25% !important;
+    display: inline-block;
+    vertical-align: top;
+} 
+    /*.form-group > input {
+        border: 0;
+        margin-bottom: 1px;
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+    .form-group > input:focus{
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }*/
+    
+    @media (max-width: 767px) {
+        .form-group{
+            padding-top: 75px;
+            padding-right: 30%;
+            padding-bottom: 15px;
+            padding-left: 30%;
+            font-family: 'Oswald', san-serif;
+        }
+    }
+
+    body{
+        background: #E5E5E5;
+        height:100%;
+    }
+    header{
+        background: #233237;
+        width: 100%;
+        height: 60px;   
+    }
+   
+    .navbar-default {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    }
+    .navbar-default .navbar-brand {
+    color: #262228;
+    }
+    .navbar-default .navbar-brand:hover,
+    .navbar-default .navbar-brand:focus {
+    color: #c5c1c0;
+    }
+    .navbar-default .navbar-text {
+    color: #262228;
+    }
+    .navbar-default .navbar-nav > li > a {
+    color: #262228;
+    }
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+    color: #c5c1c0;
+    }
+    .navbar-default .navbar-nav > li > .dropdown-menu {
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+    color: #262228;
+    }
+    .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #c5c1c0;
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #c5c1c0;
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+    color: #c5c1c0;
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+    color: #c5c1c0;
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-toggle {
+    border-color: #ffffff;
+    }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+    background-color: #ffffff;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+    background-color: #262228;
+    }
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+    border-color: #262228;
+    }
+    .navbar-default .navbar-link {
+    color: #262228;
+    }
+    .navbar-default .navbar-link:hover {
+    color: #c5c1c0;
+    }
+
+    @media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #262228;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #c5c1c0;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #c5c1c0;
+        background-color: #ffffff;
+    }
+    }
+    .navbar {min-height:42px !important;}
+    .navbar-nav > li > a {
+        padding-top:5px !important; 
+        padding-bottom:5px !important;
+        line-height: 32px;
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 12px;
+        height: 42px;
+    }
+    .navbar-header > a {
+        padding-top:5px !important; 
+        padding-bottom:5px !important;
+        line-height: 32px;
+        font-family: 'Indie Flower', cursive;
+        font-size: 25px;
+        height: 42px;
+    }

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Brainstorming Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/7710d56ffd.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap-social.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link href="/css/home.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.4.6/angular-locale_es-es.js"></script>
+    <script>
+         // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCOBoHVVaEP8KM4ipnrf8ev4tm7Uyw2swo",
+            authDomain: "rapid-clover-135023.firebaseapp.com",
+            databaseURL: "https://rapid-clover-135023.firebaseio.com",
+            storageBucket: "rapid-clover-135023.appspot.com",
+        };
+         firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+    <script src="https://unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app="bstormingapp" ng-controller="mainCtrl" ng-cloak>
+   
+
+    <div id='container'>
+         <ui-view > </ui-view>
+    </div>  
+    <script type="text/javascript" src="/js/angular-google-chart/ng-google-chart.min.js"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+</html>
+
+ <style>
+    body{height:100%;}
+    body { padding:0px; margin:0px; }
+    #facebookbtn-container{
+        width: 270px;
+        margin: 30% auto auto auto;
+    }
+    #container{
+        height: 100%;
+    }
+</style>
+

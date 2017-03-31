@@ -1,0 +1,112 @@
+﻿<div class="div">
+    <div class="divimgdesdate">
+        <img class="img" ng-src="{{item.categoryUrl}}" alt="{{item.category}}" height="48" width="48" />
+        <div class="displayInfo">
+            <label class="user">{{item.description}}</label>
+            <label class="created">{{item.created | date:"mediumDate"}}</label>
+        </div>
+    </div>
+    <div class="divqtydel">        
+        <button ng-click="deleteExpense($event, item.websafeKey, $index)" class="btn btn-default btn-xs deleteButton">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        <md-progress-circular class="progressisDeleting" md-mode="indeterminate" md-diameter="10px" ng-show="item.websafeKey == websafeKey"></md-progress-circular>
+        <label class="qty">{{'Q. ' + (item.quantity | number:2)}}</label>
+    </div>
+</div>
+
+<style>
+
+    .progressisDeleting{
+        margin: 0;
+        margin-top: 2px;
+        float: right;
+    }
+
+    .divimgdesdate{
+        width: 70%;
+        float: left;
+    }
+
+    .divqtydel {
+        display: inline-block;
+        width: 30%;
+        max-height: 55px;
+    }
+
+    .deleteButton {
+        margin-left: 1px;
+        border: none;
+        background: none;
+        margin-top: -3px;
+        margin-bottom: 0;
+        display: block;
+        float: right;
+    }
+
+    .deleteButton:hover {
+         background-color: #f6f6f6 !important;
+    }
+    .deleteButton:focus {
+          background-color: #f6f6f6 !important;
+    }
+        
+    .qty {
+        /*float: right;*/
+        clear: both;
+        float: right;
+        text-align: right;
+        padding-right: 5px;
+        font-size: 26px;
+        margin-bottom: 5px;
+        margin-top: -1px;
+        /*color: #2a2a2a;*/
+        color: #696969;
+        font-weight: normal;
+    }
+    .div{     
+        /*margin-left: 30%;*/
+        /*margin-right: 30%;*/
+        background: #ffffff;
+        width: auto;
+        /*border-radius: 5px;*/
+        margin-bottom: 5px;
+        border-bottom: 1px solid #d3d3d3;
+        padding: 10px;
+        height: auto;   
+    }
+    .img {
+        margin-bottom: 5px;
+        float: left;
+    }
+    .a {
+        display: block;
+        cursor: pointer;
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 14px;
+        color: black;
+        text-decoration: none !important;
+        clear: both; 
+        margin-bottom: 10px;
+        font-weight: normal !important;
+    }
+    .created{
+        font-family: Tahoma, Verdana, Segoe, sans-serif;
+        font-size: 11px;
+        color: #939393;
+        display: block;
+        margin-top: -3px;
+        margin-bottom: 0;
+        font-weight: normal;
+    }
+    .user{
+        margin-bottom: 0;
+    }
+
+    .displayInfo{
+        margin-left: 5px;
+        display: inline-block;
+        max-height: 32px;
+    }
+  
+</style>
